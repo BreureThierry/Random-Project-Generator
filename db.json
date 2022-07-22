@@ -1,0 +1,57 @@
+{
+    "Client_name": [
+      "Jaques Chirac", 
+      "Fabrice Dupont", 
+      "Enzo Enrico",
+      "Alicia Bloggs",
+      "Tasmin Rios",
+      "Tabatha Harwood",
+      "Dave Lovell",
+      "Kaylee Owens",
+      "Lincoln Mccormick",
+      "Lylah Sawyer"
+      ],
+    "Client_company": [
+        "Electricien", 
+        "Boulanger", 
+        "Kebab",
+        "Salle de sport",
+        "Boutique de vetement",
+        "Boutique de CBD",
+        "Créateur de mode",
+        "Musicien",
+        "Agence interim"
+      ],
+    "Client_colorRequired": [
+        "#A7001E", 
+        "#08C5D1", 
+        "#93441A",
+        "#F27438",
+        "#7AA95C",
+        "#226D68",
+        "#FC4E00",
+        "#06668C",
+        "#226D68"
+      ],
+    "Client_request": [
+        "Logo", 
+        "Logo + Carte de visite",
+        "Logo + Carte de visite + Affiche",
+        "Affiche", 
+        "Affiche + Carte de visite", 
+        "Charte graphique + Logo",
+        "Charte graphique + Logo + Carte de visite",
+        "Carte de visite",
+        "Carte de visite + Affiche"
+      ],
+    "Client_deadLine": [ 
+        "2 jours",
+        "3 jours",
+        "4 jour",
+        "5 jours",
+        "6 jours",
+        "1 semaine",
+        "2 semaine",
+        "3 semaine"
+      ]
+}

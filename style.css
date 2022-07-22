@@ -1,0 +1,164 @@
+/* -webkit- =   Safari      */        
+/* -moz-    =   Firefox     */
+/* -ms-     =   IE10+/Edge  */
+/*********************************************/
+/******************* RESET *******************/
+/*********************************************/
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*********************************************/
+/************* Import des fonts **************/
+/*********************************************/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@font-face {
+    font-family: Bebas;
+    src: url('/fonts/BebasKai-Regular.otf');
+}
+/*********************************************/
+/***** Créations des variables couleurs ******/
+/*********************************************/
+:root {
+    --color-white: #e9eded;
+    --color-black: #2b2b2b;
+    --color-orange: #FC9100;
+    --color-yellow: #FFB116;
+    --color-blue-dark: #003051;
+    --color-blue: #004792;
+    --color-blue-sky: #3F7CAF;
+}
+/*********************************************/
+/****************** STYLES *******************/
+/*********************************************/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    user-select: none;
+    font-family: Bebas, Montserrat, Helvetica, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: var(--color-white)
+}
+main {
+    padding: 5px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    background: linear-gradient(35deg, var(--color-blue-sky) 0%, var(--color-blue-dark) 100%);
+}
+.container_title {
+    height: max-content;
+    width: min-content;
+    padding: 10px;
+}
+h1 {
+    font-size: clamp(25px, 5vw, 80px);
+    font-weight: 600;
+    color: var(--color-orange);
+    text-shadow: 0 2px 5px black;
+    letter-spacing: .05em;
+    text-align: center;
+    margin: 0 0 15px 0;
+}
+h3 {
+    font-size: clamp(15px, 2.5vw, 45px);
+    font-weight: 400;
+    color: var(--color-orange);
+    text-shadow: 0 -1px 5px black;
+    -webkit-box-reflect: below -15px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    letter-spacing: .1em;
+    transform: scaleY(-1);
+    text-align: right;
+}
+.container_random_content {
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 260px;
+    max-width: 60%;
+    width: 100%;
+    min-height: min-content;
+    max-height: 300px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    box-shadow: inset 0 0 5px var(--color-blue-dark);
+    overflow-y: auto;
+}
+.container_random_content p {
+    font-family: Montserrat, Helvetica, sans-serif;
+    font-size: clamp(13px, 2.5vw, 25px);
+    padding: 2px;
+}
+.client_name,
+.client_company,
+.client_request,
+.client_deadline,
+.client_color {
+    color: var(--color-blue-dark);
+    font-weight: bold;
+}
+.client_name_data,
+.client_company_data,
+.client_request_data,
+.client_deadline_data,
+.client_color_data {
+    color: var(--color-blue-dark);
+    display: inline-block;
+}
+.color {
+    user-select: contain;
+}
+button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-blue);
+    color: var(--color-orange);
+    font-family: Bebas, Montserrat, Helvetica, sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: 300;
+    box-shadow: 0 2px 10px var(--color-blue-sky);
+}
+button:hover {
+    background-color: var(--color-blue-dark);
+    color: var(--color-orange);
+    font-family: Bebas, Montserrat, Helvetica, sans-serif;
+    box-shadow: 0 2px 20px var(--color-blue-sky);
+    cursor: pointer;
+}
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: .05em;
+}
+@media screen and (max-height: 500px) {
+    main {
+        gap: 5%;
+    }
+    h1 {
+        margin: 0 0 7px 0;
+    }
+}
+@media screen and (max-height: 374px) {
+    .copyright {
+    font-size: 0.7em;
+    text-align: right;
+    }
+}

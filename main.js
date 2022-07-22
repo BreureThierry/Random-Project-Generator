@@ -1,37 +1,133 @@
+
+const DB = {
+  "Client_name": 
+  [
+    "Jaques Richelieux", 
+    "Fabrice Dubois", 
+    "Enzo Enrico",
+    "Fatiha Fida",
+    "Dorene Meilleur",
+    "Faustin Pinette",
+    "Marlon Labrecque",
+    "Claudette Bois",
+    "Mujab Hadad",
+    "Clothilde Desroches",
+    "Matthieu Brousse",
+    "Florence Vaillancourt",
+    "Adrien Vernadeau",
+    "Nicolas Barrière",
+    "Matilda Godin",
+    "Carine Gingras",
+    "Rafidah Basara",
+    "Julie Routhier",
+    "Dexter Lereau",
+    "Patricia Lemelin",
+    "Astrid Frappier",
+    "Astrid Frappier",
+    "Alimah Sabbag",
+    "Soren Lebel"
+    ],
+  "Client_company": 
+  [
+      "Electricien", 
+      "Boulanger", 
+      "Kebab",
+      "Salle de sport",
+      "Boutique de vetement",
+      "Boutique de CBD",
+      "Boutique de chaussure",
+      "Boutique de livre",
+      "Boutique de pêche",
+      "Photographe",
+      "Boutique de bricolage",
+      "Réparateur électroménager",
+      "Créateur de mode",
+      "Musicien",
+      "Apiculteur",
+      "Vétérinaire",
+      "Mannequin",
+      "Informaticien",
+      "Dévelopeur",
+      "Mécanicien",
+      "Crêche",
+      "Centre equestre",
+      "Brasseur",
+      "Dentiste",
+      "Agence interim",
+      "Orthopédiste",
+      "Artiste peintre"
+    ],
+  "Client_colorRequired": 
+  [
+      "#A7001E", 
+      "#08C5D1", 
+      "#93441A",
+      "#F27438",
+      "#7AA95C",
+      "#226D68",
+      "#FC4E00",
+      "#06668C",
+      "#226D68",
+      "#BA327F",
+      "#A6303F",
+      "#5b300D"
+    ],
+  "Client_request": 
+  [
+      "Logo", 
+      "Logo + Carte de visite",
+      "Logo + Carte de visite + Affiche",
+      "Affiche", 
+      "Affiche + Carte de visite", 
+      "Charte graphique + Logo",
+      "Charte graphique + Logo + Carte de visite",
+      "Carte de visite",
+      "Carte de visite + Affiche"
+    ],
+  "Client_deadLine": 
+  [ 
+      "2 jours",
+      "3 jours",
+      "4 jour",
+      "5 jours",
+      "6 jours",
+      "1 semaine",
+      "2 semaine",
+      "3 semaine"
+    ]
+}
+
 const random_button = document.getElementById('randomlyButton')
-// Fonction qui lis le fichier JSON puis génere aléatoirement un projet
+const random_content = document.getElementById('random_content')
+
+// Fonction qui lis l'objet DB puis génere aléatoirement un projet 
 function randomlyGenerate() {
-    const random_content = document.getElementById('random_content')
-    fetch("/db.json").then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    // Choix aléatoire parmis les noms de clients dans db.json
-    let Client_name = data.Client_name
+    // Choix aléatoire parmis les noms de clients dans l'objet DB
+    let Client_name = DB.Client_name
     let randomClient = Math.floor(Math.random() * Client_name.length);
 
-    // Choix aléatoire parmis les types d'entreprises dans db.json
-    let Client_company = data.Client_company
+    // Choix aléatoire parmis les types d'entreprises dans l'objet DB
+    let Client_company = DB.Client_company
     let randomCompany = Math.floor(Math.random() * Client_company.length);
 
-    // Choix aléatoire parmis les deadline dans db.json
-    let Client_deadLine = data.Client_deadLine
+    // Choix aléatoire parmis les deadline dans l'objet DB
+    let Client_deadLine = DB.Client_deadLine
     let randomDeadline = Math.floor(Math.random() * Client_deadLine.length);
 
-    // Choix aléatoire parmis les couleurs imposé dans db.json
-    let Client_colorRequired = data.Client_colorRequired
+    // Choix aléatoire parmis les couleurs imposé dans l'objet DB
+    let Client_colorRequired = DB.Client_colorRequired
     let randomColor = Math.floor(Math.random() * Client_colorRequired.length);
 
-    // Choix aléatoire parmis les couleurs imposé dans db.json
-    let Client_request = data.Client_request
+    // Choix aléatoire parmis les couleurs imposé dans l'objet DB
+    let Client_request = DB.Client_request
     let randomRequest = Math.floor(Math.random() * Client_request.length);
 
     random_content.innerHTML = `
-        <p><span class="client_name">Nom du client :</span> <span class="client_name_data">${Client_name[randomClient]}</span></p>
-        <p><span class="client_company">Entreprise :</span> <span class="client_company_data">${Client_company[randomCompany]}</span></p>
-        <p><span class="client_deadline">Délai maximum :</span> <span class="client_deadline_data">${Client_deadLine[randomDeadline]}</span></p>
-        <p><span class="client_request">Commande :</span> <span class="client_request_data">${Client_request[randomRequest]}</span></p>
-        <p><span class="client_color">Couleur imposé :</span> <span style="background-color:${Client_colorRequired[randomColor]};"><span class="client_color_data">${Client_colorRequired[randomColor]}</span></span></p>`
-  })
+        <p><span class="client_name">Nom du client :</span> <span value="${Client_name[randomClient]}" class="client_name_DB">${Client_name[randomClient]}</span></p>
+        <p><span class="client_company">Entreprise :</span> <span value="${Client_company[randomCompany]}" class="client_company_DB">${Client_company[randomCompany]}</span></p>
+        <p><span class="client_deadline">Délai maximum :</span> <span value="${Client_deadLine[randomDeadline]}" class="client_deadline_DB">${Client_deadLine[randomDeadline]}</span></p>
+        <p><span class="client_request">Commande :</span> <span value="${Client_request[randomRequest]}" class="client_request_DB">${Client_request[randomRequest]}</span></p>
+        <p><span class="client_color">Couleur imposée :</span> <span value="${Client_colorRequired[randomColor]}" style="background-color:${Client_colorRequired[randomColor]};"><span class="client_color_DB">${Client_colorRequired[randomColor]}</span></span></p>`
 }
+
 randomlyGenerate()

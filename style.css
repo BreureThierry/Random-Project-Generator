@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 @font-face {
     font-family: Bebas;
-    src: url('/fonts/BebasKai-Regular.otf');
+    src: url('fonts/BebasKai-Regular.otf');
 }
 /*********************************************/
 /***** Créations des variables couleurs ******/
@@ -42,7 +42,6 @@ body {
     height: 100%;
     background-color: var(--color-bg);
     color: var(--color-white);
-    user-select: none;
     font-family: Bebas, Montserrat, Helvetica, sans-serif;
 }
 a {
@@ -72,6 +71,7 @@ h1 {
     letter-spacing: .05em;
     text-align: center;
     margin: 0 0 15px 0;
+    user-select: none;
 }
 h3 {
     font-size: clamp(15px, 2.5vw, 45px);
@@ -82,6 +82,7 @@ h3 {
     letter-spacing: .1em;
     transform: scaleY(-1);
     text-align: right;
+    user-select: none;
 }
 .container_random_content {
     padding: 5px;
@@ -108,6 +109,7 @@ h3 {
 .client_color {
     color: var(--color-blue-dark);
     font-weight: bold;
+    user-select: none;
 }
 .client_name_data,
 .client_company_data,
@@ -118,7 +120,7 @@ h3 {
     display: inline-block;
 }
 .color {
-    user-select: contain;
+    user-select: text;
 }
 button {
     width: 150px;
@@ -132,6 +134,7 @@ button {
     letter-spacing: 1px;
     font-weight: 300;
     box-shadow: 0 2px 10px var(--color-blue-sky);
+    user-select: none;
 }
 button:hover {
     background-color: var(--color-blue-dark);
@@ -147,6 +150,10 @@ button:hover {
     width: 100%;
     text-align: center;
     letter-spacing: .05em;
+    user-select: none;
+}
+.copyright a:hover {
+    color: var(--color-orange);
 }
 @media screen and (max-height: 500px) {
     main {

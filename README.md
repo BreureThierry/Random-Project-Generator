@@ -17,7 +17,7 @@
 
 <h2>COMMENT MODIFIER LES DONNÉES GÉNÉRÉES :</h2>
 
-<p>Pour ajouter ou supprimer des données, allez dans la variable 'DB' et d'adapter.</p>
+<p>Pour ajouter ou supprimer des données, allez dans la variable 'DB' et adapter comme vous le souhaitez.</p>
 
 <p>Créé par Thierry Breure</p>
 <hr>

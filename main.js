@@ -22,7 +22,7 @@ const DB = {
     "Julie Routhier",
     "Dexter Lereau",
     "Patricia Lemelin",
-    "Astrid Frappier",
+    "Laurent Duclot",
     "Astrid Frappier",
     "Alimah Sabbag",
     "Soren Lebel"
@@ -31,15 +31,15 @@ const DB = {
   [
       "Electricien", 
       "Boulanger", 
-      "Kebab",
+      "Sandwicherie",
       "Salle de sport",
       "Boutique de vetement",
-      "Boutique de CBD",
+      "Boutique de montre",
       "Boutique de chaussure",
       "Boutique de livre",
       "Boutique de pêche",
-      "Photographe",
       "Boutique de bricolage",
+      "Photographe",
       "Réparateur électroménager",
       "Créateur de mode",
       "Musicien",
@@ -49,12 +49,9 @@ const DB = {
       "Informaticien",
       "Dévelopeur",
       "Mécanicien",
-      "Crêche",
       "Centre equestre",
       "Brasseur",
-      "Dentiste",
       "Agence interim",
-      "Orthopédiste",
       "Artiste peintre"
     ],
   "Client_colorRequired": 
@@ -105,23 +102,19 @@ function randomlyGenerate() {
     // Choix aléatoire parmis les noms de clients dans l'objet DB
     let Client_name = DB.Client_name
     let randomClient = Math.floor(Math.random() * Client_name.length);
-
     // Choix aléatoire parmis les types d'entreprises dans l'objet DB
     let Client_company = DB.Client_company
     let randomCompany = Math.floor(Math.random() * Client_company.length);
-
     // Choix aléatoire parmis les deadline dans l'objet DB
     let Client_deadLine = DB.Client_deadLine
     let randomDeadline = Math.floor(Math.random() * Client_deadLine.length);
-
     // Choix aléatoire parmis les couleurs imposé dans l'objet DB
     let Client_colorRequired = DB.Client_colorRequired
     let randomColor = Math.floor(Math.random() * Client_colorRequired.length);
-
-    // Choix aléatoire parmis les couleurs imposé dans l'objet DB
+    // Choix aléatoire parmis les requêtes dans l'objet DB
     let Client_request = DB.Client_request
     let randomRequest = Math.floor(Math.random() * Client_request.length);
-
+    // Envoi le résultat généré dans l'élement HTML
     random_content.innerHTML = `
         <p><span class="client_name">Nom du client :</span> <span value="${Client_name[randomClient]}" class="client_name_DB">${Client_name[randomClient]}</span></p>
         <p><span class="client_company">Entreprise :</span> <span value="${Client_company[randomCompany]}" class="client_company_DB">${Client_company[randomCompany]}</span></p>
@@ -130,4 +123,9 @@ function randomlyGenerate() {
         <p><span class="client_color">Couleur imposée :</span> <span value="${Client_colorRequired[randomColor]}" style="background-color:${Client_colorRequired[randomColor]};"><span class="client_color_DB">${Client_colorRequired[randomColor]}</span></span></p>`
 }
 
-randomlyGenerate()
+function go(){
+  const interval = setInterval(randomlyGenerate, 55)
+  setTimeout(()=>{clearInterval(interval)}, 404)
+}
+
+go()
